@@ -1,17 +1,15 @@
-package com.valerie.specialitybank.data.local
+package com.valerie.specialitybank.data.local.dao
 
 import androidx.room.*
+import com.valerie.specialitybank.data.local.model.SpecialityModel
+import com.valerie.specialitybank.data.local.store.SpecialityWorkerStore
 import kotlinx.coroutines.flow.Flow
 
 @Dao
-interface SpecialityWorkerDao {
+interface SpecialityDao {
     @Transaction
     @Query("SELECT * FROM speciality")
     fun loadSpeciality(): Flow<List<SpecialityModel>>
-
-//    @Transaction
-//    @Query("SELECT * FROM speciality")
-//    fun loadSpecialityJoin(): Flow<List<SpecialityWorkerStore>>
 
     @Transaction
     @Query("SELECT * FROM speciality")
@@ -21,15 +19,13 @@ interface SpecialityWorkerDao {
     @Query("SELECT * FROM speciality WHERE specialityId = :specialityId")
     fun loadSpecialityById(specialityId : Int): Flow<SpecialityModel>
 
-//    @Transaction
-//    @Query("SELECT * FROM worker")
-//    abstract suspend fun loadWorkerJoin(): Flow<List<WorkerSpecialityStore>>
-
     @Transaction
     @Query("SELECT * FROM speciality WHERE specialityId = :specialityId")
     fun loadWorkerListBySpecialityId(specialityId : Int): Flow<SpecialityWorkerStore>
 
-//    @Transaction
-//    @Query("SELECT * FROM worker WHERE workerId = :workerId")
-//    abstract suspend fun loadSpecialityByWorker(workerId : String): WorkerSpecialityStore
+    @Query("DELETE FROM speciality")
+    suspend fun deleteAllSpeciality()
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun saveSpeciality(specialityList : List<SpecialityModel>)
 }

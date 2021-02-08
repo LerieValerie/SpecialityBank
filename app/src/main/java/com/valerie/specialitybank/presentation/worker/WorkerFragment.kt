@@ -11,6 +11,7 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.valerie.specialitybank.R
 import com.valerie.specialitybank.databinding.FragmentSpecialityBinding
 import com.valerie.specialitybank.databinding.FragmentWorkerBinding
@@ -57,6 +58,10 @@ class WorkerFragment : Fragment() {
         binding.apply {
             Glide.with(root.context)
                     .load(url)
+                    .transform(CircleCrop())
+                    .placeholder(R.drawable.ic_image_place_holder)
+                    .error(R.drawable.ic_broken_image)
+                    .fallback(R.drawable.ic_no_image)
                     .into(workerImage)
         }
     }

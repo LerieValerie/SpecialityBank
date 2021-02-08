@@ -1,6 +1,6 @@
 package com.valerie.specialitybank.data.local.converter
 
-import com.valerie.specialitybank.data.local.SpecialityWorkerJoin
+import com.valerie.specialitybank.data.local.model.SpecialityWorkerJoin
 import com.valerie.specialitybank.domain.entity.Speciality
 import com.valerie.specialitybank.domain.entity.Worker
 

@@ -18,11 +18,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-//        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.getDefaultNightMode())
-
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-//        setSupportActionBar(binding.toolbar)
+        setSupportActionBar(binding.toolbar)
 
         supportFragmentManager.findFragmentById(R.id.nav_host)?.findNavController()?.let { nav ->
             appBarConfiguration = AppBarConfiguration(nav.graph)
@@ -32,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onSupportNavigateUp() =
             NavigationUI.navigateUp(findNavController(R.id.nav_host), appBarConfiguration)
-//
+
 //    override fun onCreateOptionsMenu(menu: Menu): Boolean {
 //        menuInflater.inflate(R.menu.actions, menu)
 //

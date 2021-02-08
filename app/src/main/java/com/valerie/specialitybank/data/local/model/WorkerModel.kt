@@ -1,4 +1,4 @@
-package com.valerie.specialitybank.data.local
+package com.valerie.specialitybank.data.local.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

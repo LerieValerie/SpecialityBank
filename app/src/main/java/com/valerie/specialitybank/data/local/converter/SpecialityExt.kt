@@ -1,6 +1,6 @@
 package com.valerie.specialitybank.data.local.converter
 
-import com.valerie.specialitybank.data.local.SpecialityModel
+import com.valerie.specialitybank.data.local.model.SpecialityModel
 import com.valerie.specialitybank.domain.entity.Speciality
 
 fun Speciality.toModel() = SpecialityModel(

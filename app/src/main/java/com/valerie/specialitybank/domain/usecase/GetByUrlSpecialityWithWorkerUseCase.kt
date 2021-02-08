@@ -1,9 +1,9 @@
 package com.valerie.specialitybank.domain.usecase
 
-import com.valerie.specialitybank.domain.repository.GetByUrlSpecialityWithWorkerRepository
+import com.valerie.specialitybank.domain.repository.SpecialityWithWorkerRemoteRepository
 
-class GetByUrlSpecialityWithWorkerUseCase(private val getByUrlSpecialityWithWorkerRepository: GetByUrlSpecialityWithWorkerRepository) {
+class GetByUrlSpecialityWithWorkerUseCase(private val specialityWithWorkerRemoteRepository: SpecialityWithWorkerRemoteRepository) {
 
     suspend operator fun invoke() =
-            getByUrlSpecialityWithWorkerRepository.getByUrl()
+            specialityWithWorkerRemoteRepository.getByUrl()
 }

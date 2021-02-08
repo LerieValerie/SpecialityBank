@@ -1,9 +1,11 @@
-package com.valerie.specialitybank.data.local
+package com.valerie.specialitybank.data.local.store
 
 import androidx.room.Embedded
 import androidx.room.Junction
 import androidx.room.Relation
-import com.valerie.specialitybank.domain.entity.Worker
+import com.valerie.specialitybank.data.local.model.SpecialityModel
+import com.valerie.specialitybank.data.local.model.SpecialityWorkerJoin
+import com.valerie.specialitybank.data.local.model.WorkerModel
 
 data class SpecialityWorkerStore(
     @Embedded
@@ -12,7 +14,8 @@ data class SpecialityWorkerStore(
         parentColumn = "specialityId",
 //        entity = WorkerModel::class,
         entityColumn = "workerId",
-        associateBy = Junction(SpecialityWorkerJoin::class,
+        associateBy = Junction(
+            SpecialityWorkerJoin::class,
             parentColumn = "specialityId",
             entityColumn = "workerId"
         )

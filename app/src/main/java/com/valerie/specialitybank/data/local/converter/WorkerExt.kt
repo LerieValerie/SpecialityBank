@@ -1,7 +1,6 @@
 package com.valerie.specialitybank.data.local.converter
 
-import androidx.room.TypeConverter
-import com.valerie.specialitybank.data.local.WorkerModel
+import com.valerie.specialitybank.data.local.model.WorkerModel
 import com.valerie.specialitybank.domain.entity.Speciality
 import com.valerie.specialitybank.domain.entity.Worker
 import kotlinx.datetime.Instant

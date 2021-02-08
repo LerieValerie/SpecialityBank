@@ -12,7 +12,6 @@
         android:id="@+id/worker_image"
         android:layout_width="140dp"
         android:layout_height="140dp"
-        android:background="@drawable/worker_image_background"
         android:contentDescription="@string/imageContentDescription"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
