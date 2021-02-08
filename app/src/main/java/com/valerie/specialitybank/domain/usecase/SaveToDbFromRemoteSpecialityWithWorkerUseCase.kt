@@ -9,6 +9,6 @@ class SaveToDbFromRemoteSpecialityWithWorkerUseCase(
 ) {
     suspend operator fun invoke() {
         val pairResponse = getByUrl()
-        saveToDb(pairResponse.second, pairResponse.first)
+        saveToDb.invoke(pairResponse.second, pairResponse.first)
     }
 }

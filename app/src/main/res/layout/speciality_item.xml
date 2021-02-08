@@ -7,30 +7,30 @@
     android:layout_height="wrap_content"
     android:clickable="true"
     android:focusable="true"
+    android:padding="8dp"
     android:background="?attr/selectableItemBackground">
 
-
-    <TextView
-        android:id="@+id/speciality_item"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:ellipsize="end"
-        android:maxLines="3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/speciality_code"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/speciality_code"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:textAppearance="@style/TextAppearance.AppCompat"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/speciality_item"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="101" />
+
+    <TextView
+        android:id="@+id/speciality_item"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin"
+        android:layout_marginLeft="@dimen/margin"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/speciality_code"
+        app:layout_constraintTop_toTopOf="@+id/speciality_code"
+        tools:text="Speciality" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,7 @@
 package com.valerie.specialitybank
 
 import android.app.Application
+import androidx.appcompat.app.AppCompatDelegate
 import com.valerie.specialitybank.data.local.SpecialityWorkerDatabase
 import com.valerie.specialitybank.data.local.repository.ClearAllRepositoryImpl
 import com.valerie.specialitybank.data.local.repository.LoadFromDbRepositoryImpl
@@ -57,6 +58,8 @@ class SpecialityBankApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
+
+//        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.getDefaultNightMode())
 
         startKoin {
             androidLogger()

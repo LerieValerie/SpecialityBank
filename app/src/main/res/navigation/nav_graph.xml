@@ -6,7 +6,7 @@
     <fragment
         android:id="@+id/specialityRosterFragment"
         android:name="com.valerie.specialitybank.presentation.specialityroster.SpecialityRosterFragment"
-        android:label="SpecialityRoster">
+        android:label="Speciality List">
         <action
             android:id="@+id/action_speciality"
             app:destination="@id/specialityFragment" />

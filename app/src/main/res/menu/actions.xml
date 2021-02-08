@@ -4,6 +4,12 @@
 
     <item
         android:id="@+id/get"
-        android:title="Get"
-        app:showAsAction="always|ifRoom" />
+        android:icon="@drawable/ic_get"
+        android:title="@string/get"
+        app:showAsAction="ifRoom|withText" />
+    <item
+        android:id="@+id/delete"
+        android:icon="@drawable/ic_delete"
+        android:title="@string/delete"
+        app:showAsAction="ifRoom|withText" />
 </menu>

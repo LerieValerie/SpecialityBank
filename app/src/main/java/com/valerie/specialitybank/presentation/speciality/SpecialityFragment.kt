@@ -29,7 +29,7 @@ class SpecialityFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? = FragmentSpecialityBinding.inflate(inflater, container, false)
+    ): View = FragmentSpecialityBinding.inflate(inflater, container, false)
         .apply { binding = this }.root
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
