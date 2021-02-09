@@ -40,14 +40,10 @@ class WorkerFragment : Fragment() {
                 worker = it
                 displayWorkerInfo(worker)
             }
-            println("ppp")
         }
 
         viewModel.loadSpecialityList().observe(viewLifecycleOwner) {
-            if (it != null) {
-                displaySpecialityList(it)
-            }
-            println("pppasfras")
+            displaySpecialityList(it)
         }
     }
 

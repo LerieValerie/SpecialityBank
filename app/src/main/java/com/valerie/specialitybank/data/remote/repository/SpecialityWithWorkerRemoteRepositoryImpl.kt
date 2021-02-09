@@ -9,12 +9,15 @@ class SpecialityWithWorkerRemoteRepositoryImpl(
     private val api : NetInterface
 ) : SpecialityWithWorkerRemoteRepository {
 
-    override suspend fun getByUrl() : Pair<List<Speciality>, List<Worker>>{
-        val response = api.getWorker()
-
-        val specialityList = response.toSpecialityList()
-        val workerList = response.toWorkerList()
-
-        return Pair(specialityList, workerList)
+    override suspend fun getByUrl() : Pair<List<Speciality>, List<Worker>> {
+        return try {
+            val response = api.getWorker()
+            val specialityList = response.toSpecialityList()
+            val workerList = response.toWorkerList()
+            Pair(specialityList, workerList)
+        }
+        catch (throwable: Throwable) {
+            Pair(listOf(), listOf())
+        }
     }
 }

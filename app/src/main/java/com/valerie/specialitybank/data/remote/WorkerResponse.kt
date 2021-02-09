@@ -16,7 +16,7 @@ data class WorkerResponse(
         id = id,
         name = name?.toUpStart(),
         surname = surname?.toUpStart(),
-        birthDate = birthDate?.toKotlinInstant(),
+        birthDate = toKotlinInstant(birthDate),
         imageUrl = imageUrl,
         specialityIdList = specialityResponseList.map { it.id }
     )

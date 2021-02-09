@@ -13,11 +13,11 @@ class WorkerRepositoryImpl(private val dbInstance : SpecialityWorkerDatabase) : 
     override fun loadWorkerById(workerId: Int): Flow<Worker?> =
         dbInstance.workerDao().loadWorkerById(workerId).map { it?.toEntity() }
 
-    override fun loadSpecialityListByWorkerId(workerId: Int): Flow<List<Speciality>?> =
+    override fun loadSpecialityListByWorkerId(workerId: Int): Flow<List<Speciality>> =
         dbInstance.workerDao().loadSpecialityListByWorkerId(workerId).map {
             it?.specialityList?.map { specialityModel ->
                 specialityModel.toEntity()
-            }
+            }  ?: listOf()
         }
 
     override suspend fun deleteWorker() {

@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.Flow
 
 interface WorkerRepository {
     fun loadWorkerById(workerId : Int) : Flow<Worker?>
-    fun loadSpecialityListByWorkerId(workerId: Int) : Flow<List<Speciality>?>
+    fun loadSpecialityListByWorkerId(workerId: Int) : Flow<List<Speciality>>
 
     suspend fun deleteWorker()
 

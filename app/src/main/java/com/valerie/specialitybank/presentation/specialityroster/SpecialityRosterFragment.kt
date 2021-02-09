@@ -24,7 +24,7 @@ class SpecialityRosterFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? = FragmentSpecialityRosterBinding.inflate(inflater, container, false)
+    ): View = FragmentSpecialityRosterBinding.inflate(inflater, container, false)
         .apply { binding = this }.root
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -54,16 +54,16 @@ class SpecialityRosterFragment : Fragment() {
         viewModel.load().observe(viewLifecycleOwner) {
             adapter.submitList(it)
 
-//            when {
-//                it.isEmpty() -> {
-//                    binding.empty.visibility = View.VISIBLE
-//                    binding.empty.setText(R.string.emptyText)
-//                }
-//                else -> {
-//                    binding.empty.visibility = View.GONE
-//                }
-//
-//            }
+            when {
+                it.isEmpty() -> {
+                    binding.empty.visibility = View.VISIBLE
+                    binding.empty.setText(R.string.emptyText)
+                }
+                else -> {
+                    binding.empty.visibility = View.GONE
+                }
+
+            }
         }
     }
 
@@ -89,10 +89,10 @@ class SpecialityRosterFragment : Fragment() {
                 viewModel.load()
                 return true
             }
-//            R.id.delete -> {
-//                viewModel.delete()
-//                return true
-//            }
+            R.id.delete -> {
+                viewModel.delete()
+                return true
+            }
         }
         return super.onOptionsItemSelected(item)
     }

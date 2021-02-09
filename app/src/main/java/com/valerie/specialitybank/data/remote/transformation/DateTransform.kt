@@ -15,16 +15,12 @@ class DateTransform {
                         "[dd-MM-yyyy]"
         )
 
-        fun String.toKotlinInstant() =
-            if (!isNullOrEmpty()) {
-                try {
-                    val localDate = LocalDate.parse(this, formatter).toKotlinLocalDate()
+        fun toKotlinInstant(str : String?) =
+                if (str.isNullOrEmpty()) {
+                    val localDate = LocalDate.parse(str, formatter).toKotlinLocalDate()
                     localDate.atStartOfDayIn(TimeZone.currentSystemDefault())
-                } catch (ex: NullPointerException) {
+                } else {
                     null
                 }
-            } else {
-                null
-            }
     }
 }
