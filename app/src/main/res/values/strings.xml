@@ -7,6 +7,7 @@
     <string name="delete">Delete</string>
     <string name="load">Load</string>
     <string name="emptyText">Click the load icon to add items</string>
+<!--    <string name="failureRetrofitText">Click the load icon to add items</string>-->
     <string name="empty">-</string>
     <string name="years_old">(%1$d years old)</string>
     <string name="comma_transfer">,\n</string>

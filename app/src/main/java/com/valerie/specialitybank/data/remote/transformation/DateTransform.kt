@@ -16,7 +16,7 @@ class DateTransform {
         )
 
         fun toKotlinInstant(str : String?) =
-                if (str.isNullOrEmpty()) {
+                if (!str.isNullOrEmpty()) {
                     val localDate = LocalDate.parse(str, formatter).toKotlinLocalDate()
                     localDate.atStartOfDayIn(TimeZone.currentSystemDefault())
                 } else {

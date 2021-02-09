@@ -3,6 +3,7 @@ package com.valerie.specialitybank.presentation.specialityroster
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.asLiveData
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -30,7 +31,19 @@ class SpecialityRosterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.getFromRemoteAndSaveToDb()
+        viewModel.failureFlow.asLiveData().observe(viewLifecycleOwner) {
+            when {
+                !it.message.isNullOrEmpty() -> {
+                    binding.empty.visibility = View.VISIBLE
+                    binding.empty.text = it.message
+                }
+                else -> {
+                    binding.empty.visibility = View.GONE
+                }
+            }
+        }
+
+//        viewModel.getFromRemoteAndSaveWithFailure()
 
         val adapter =
             SpecialityRosterAdapter(
@@ -51,6 +64,7 @@ class SpecialityRosterFragment : Fragment() {
         }
 
 
+
         viewModel.load().observe(viewLifecycleOwner) {
             adapter.submitList(it)
 
@@ -65,6 +79,8 @@ class SpecialityRosterFragment : Fragment() {
 
             }
         }
+
+        viewModel.getFromRemoteAndSaveWithFailure()
     }
 
     private fun display(speciality : Speciality) {
@@ -84,7 +100,7 @@ class SpecialityRosterFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.load -> {
-                viewModel.reloadFromRemote()
+                viewModel.reloadFromRemoteFailure()
 //                viewModel.getFromRemoteAndSaveToDb()
                 viewModel.load()
                 return true
