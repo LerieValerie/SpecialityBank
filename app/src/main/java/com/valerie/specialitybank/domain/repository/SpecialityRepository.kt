@@ -7,8 +7,8 @@ import kotlinx.coroutines.flow.Flow
 interface SpecialityRepository {
     fun loadSpecialityList() : Flow<List<Speciality>>
     suspend fun loadSpecialityListForCheck() : List<Speciality>
-    fun loadSpecialityById(specialityId : Int) : Flow<Speciality>
-    fun loadWorkerListBySpecialityId(specialityId : Int) : Flow<List<Worker>>
+    fun loadSpecialityById(specialityId : Int) : Flow<Speciality?>
+    fun loadWorkerListBySpecialityId(specialityId : Int) : Flow<List<Worker>?>
 
     suspend fun deleteSpeciality()
 

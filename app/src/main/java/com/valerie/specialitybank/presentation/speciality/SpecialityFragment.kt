@@ -54,7 +54,9 @@ class SpecialityFragment : Fragment() {
         }
 
         viewModel.loadSpeciality().observe(viewLifecycleOwner) {
-            binding.specialityName.text = it.name
+            if (it != null) {
+                binding.specialityName.text = it.name
+            }
         }
 
         viewModel.loadWorkerList().observe(viewLifecycleOwner) {

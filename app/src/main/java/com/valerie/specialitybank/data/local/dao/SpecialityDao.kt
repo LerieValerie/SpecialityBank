@@ -17,11 +17,11 @@ interface SpecialityDao {
 
     @Transaction
     @Query("SELECT * FROM speciality WHERE specialityId = :specialityId")
-    fun loadSpecialityById(specialityId : Int): Flow<SpecialityModel>
+    fun loadSpecialityById(specialityId : Int): Flow<SpecialityModel?>
 
     @Transaction
     @Query("SELECT * FROM speciality WHERE specialityId = :specialityId")
-    fun loadWorkerListBySpecialityId(specialityId : Int): Flow<SpecialityWorkerStore>
+    fun loadWorkerListBySpecialityId(specialityId : Int): Flow<SpecialityWorkerStore?>
 
     @Query("DELETE FROM speciality")
     suspend fun deleteAllSpeciality()

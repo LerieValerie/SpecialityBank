@@ -24,13 +24,13 @@ class SpecialityRepositoryImpl(private val dbInstance : SpecialityWorkerDatabase
             specialityModel.toEntity()
         }
 
-    override fun loadSpecialityById(specialityId: Int): Flow<Speciality> =
-        dbInstance.specialityDao().loadSpecialityById(specialityId).map { it.toEntity() }
+    override fun loadSpecialityById(specialityId: Int): Flow<Speciality?> =
+        dbInstance.specialityDao().loadSpecialityById(specialityId).map { it?.toEntity() }
 
-    override fun loadWorkerListBySpecialityId(specialityId: Int): Flow<List<Worker>> =
+    override fun loadWorkerListBySpecialityId(specialityId: Int): Flow<List<Worker>?> =
         dbInstance.specialityDao().loadWorkerListBySpecialityId(specialityId).map {
-            it.workerList.map { workerModel ->
-                workerModel.toEntity()
+            it?.workerList?.map { workerModel ->
+                workerModel?.toEntity()
             }
         }
 

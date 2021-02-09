@@ -14,13 +14,6 @@ class SpecialityRosterViewModel(
         private val clearAll : ClearAllUseCase
 ) : ViewModel() {
 
-//    val a = MutableLiveData<List<Speciality>>()
-//    lateinit var aa : LiveData<List<Speciality>>
-
-//    init {
-//        load()
-//    }
-
     fun getFromRemoteAndSaveToDb() {
         viewModelScope.launch {
             val specialityList = loadForCheck()
@@ -34,19 +27,19 @@ class SpecialityRosterViewModel(
     }
 
     fun load() = loadSpecialityList().asLiveData()
-//    fun load() {
-//    aa = loadSpecialityList().asLiveData()
-//    }
 
+    fun delete() {
+        viewModelScope.launch {
+            clearAll()
+        }
+    }
 
-//    fun save() {
-//        viewModelScope.launch {
-//            workerList.value?.let { w : List<Worker> ->
-//                specialityList.value?.let { s : List<Speciality> ->
-//                    save(workerList = w, specialityList = s)
-//                }
-//            }
-//        }
-//    }
+    fun reloadFromRemote() {
+        viewModelScope.launch {
+            clearAll()
+            getFromRemoteAndSave()
+        }
+    }
+
 }
 

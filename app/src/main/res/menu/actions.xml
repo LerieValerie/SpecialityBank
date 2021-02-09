@@ -3,13 +3,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/get"
-        android:icon="@drawable/ic_get"
-        android:title="@string/get"
+        android:id="@+id/load"
+        android:icon="@drawable/ic_load"
+        android:title="@string/load"
         app:showAsAction="ifRoom|withText" />
-    <item
-        android:id="@+id/delete"
-        android:icon="@drawable/ic_delete"
-        android:title="@string/delete"
-        app:showAsAction="ifRoom|withText" />
+<!--    <item-->
+<!--        android:id="@+id/delete"-->
+<!--        android:icon="@drawable/ic_delete"-->
+<!--        android:title="@string/delete"-->
+<!--        app:showAsAction="ifRoom|withText" />-->
 </menu>

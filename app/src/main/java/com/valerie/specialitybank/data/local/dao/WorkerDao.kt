@@ -10,11 +10,11 @@ interface WorkerDao {
 
     @Transaction
     @Query("SELECT * FROM worker WHERE workerId = :workerId")
-    fun loadWorkerById(workerId : Int): Flow<WorkerModel>
+    fun loadWorkerById(workerId : Int): Flow<WorkerModel?>
 
     @Transaction
     @Query("SELECT * FROM worker WHERE workerId = :workerId")
-    fun loadSpecialityListByWorkerId(workerId: Int): Flow<WorkerSpecialityStore>
+    fun loadSpecialityListByWorkerId(workerId: Int): Flow<WorkerSpecialityStore?>
 
     @Query("DELETE FROM worker")
     suspend fun deleteAllWorker()

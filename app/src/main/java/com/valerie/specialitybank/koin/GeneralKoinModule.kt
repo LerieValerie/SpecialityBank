@@ -31,12 +31,12 @@ val generalModule = module {
     factory { WorkerRepositoryImpl(get()) } bind WorkerRepository::class
     factory { JoinRepositoryImpl(get()) } bind JoinRepository::class
 
-    factory { SaveToDbSpecialityWithWorkerUseCase(get()) }
+    factory { SaveToDbSpecialityWithWorkerUseCase(get(), get(), get()) }
     factory { GetByUrlSpecialityWithWorkerUseCase(get()) }
     factory { SaveToDbFromRemoteSpecialityWithWorkerUseCase(get(), get()) }
     factory { LoadSpecialityListUseCase(get()) }
     factory { LoadSpecialityListForCheckUseCase(get()) }
-    factory { ClearAllUseCase(get()) }
+    factory { ClearAllUseCase(get(), get()) }
     factory { LoadSpecialityByIdUseCase(get()) }
     factory { LoadWorkerListBySpecialityIdUseCase(get()) }
     factory { LoadWorkerByIdUseCase(get()) }

@@ -1,9 +1,9 @@
 package com.valerie.specialitybank.domain.usecase
 
-import com.valerie.specialitybank.domain.repository.LoadFromDbRepository
+import com.valerie.specialitybank.domain.repository.WorkerRepository
 
-class LoadSpecialityListByWorkerIdUseCase(private val loadFromDbRepository: LoadFromDbRepository) {
+class LoadSpecialityListByWorkerIdUseCase(private val workerRepository: WorkerRepository) {
     operator fun invoke(workerId : Int) =
-        loadFromDbRepository.loadSpecialityListByWorkerId(workerId)
+        workerRepository.loadSpecialityListByWorkerId(workerId)
 
 }

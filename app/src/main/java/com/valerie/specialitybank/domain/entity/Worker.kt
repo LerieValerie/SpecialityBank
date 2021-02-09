@@ -13,15 +13,6 @@ data class Worker(
         val imageUrl: String?,
         val specialityIdList: List<Int>
 ) {
-    fun getAge() : Int {
-        var age: Int = 0
-        val currentDate = Clock.System.now()
-//        val currentDate = Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault()).date
-
-        if (birthDate != null) {
-            age = birthDate.yearsUntil(currentDate, TimeZone.currentSystemDefault())
-        }
-        return age
-    }
+    fun getAge()= birthDate?.yearsUntil(Clock.System.now(), TimeZone.currentSystemDefault())
 }
 

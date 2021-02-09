@@ -1,10 +1,10 @@
 package com.valerie.specialitybank.domain.usecase
 
 import com.valerie.specialitybank.domain.entity.Speciality
-import com.valerie.specialitybank.domain.repository.LoadFromDbRepository
+import com.valerie.specialitybank.domain.repository.SpecialityRepository
 
-class LoadSpecialityListForCheckUseCase(private val loadRepository : LoadFromDbRepository) {
+class LoadSpecialityListForCheckUseCase(private val specialityRepository: SpecialityRepository) {
     suspend operator fun invoke() : List<Speciality> {
-        return loadRepository.loadSpecialityListForCheck()
+        return specialityRepository.loadSpecialityListForCheck()
     }
 }

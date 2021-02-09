@@ -3,7 +3,6 @@ package com.valerie.specialitybank.presentation.specialityroster
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.asLiveData
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -54,6 +53,17 @@ class SpecialityRosterFragment : Fragment() {
 
         viewModel.load().observe(viewLifecycleOwner) {
             adapter.submitList(it)
+
+//            when {
+//                it.isEmpty() -> {
+//                    binding.empty.visibility = View.VISIBLE
+//                    binding.empty.setText(R.string.emptyText)
+//                }
+//                else -> {
+//                    binding.empty.visibility = View.GONE
+//                }
+//
+//            }
         }
     }
 
@@ -73,14 +83,16 @@ class SpecialityRosterFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.get -> {
-//                edit()
+            R.id.load -> {
+                viewModel.reloadFromRemote()
+//                viewModel.getFromRemoteAndSaveToDb()
+                viewModel.load()
                 return true
             }
-            R.id.delete -> {
-
-                return true
-            }
+//            R.id.delete -> {
+//                viewModel.delete()
+//                return true
+//            }
         }
         return super.onOptionsItemSelected(item)
     }
