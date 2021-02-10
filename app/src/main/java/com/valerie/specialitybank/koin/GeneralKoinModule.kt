@@ -25,7 +25,7 @@ val generalModule = module {
     single { SpecialityWorkerDatabase.newInstance(androidContext()) }
     single { RetrofitBuilder.buildApi(get(named(apiUrl)))}
 
-    single { Dispatchers.IO }
+    single { Dispatchers.Default }
 
     factory { SpecialityWithWorkerRemoteRepositoryImpl(get()) } bind SpecialityWithWorkerRemoteRepository::class
     factory { SpecialityRepositoryImpl(get()) } bind SpecialityRepository::class

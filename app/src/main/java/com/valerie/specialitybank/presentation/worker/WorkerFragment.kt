@@ -65,7 +65,6 @@ class WorkerFragment : Fragment() {
             workerSurnameName.text = NameTransform.getNameSurname(worker)
             birthDate.text = DateTransform.getDateWithDot(worker.birthDate) ?: getString(R.string.empty)
             age.text = worker.getAge()?.toString() ?: getString(R.string.empty)
-//            age.text = AgeTransform.getAgeStr(worker.getAge())
         }
     }
 

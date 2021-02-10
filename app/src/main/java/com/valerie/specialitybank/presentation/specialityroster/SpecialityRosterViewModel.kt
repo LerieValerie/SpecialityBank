@@ -24,18 +24,6 @@ class SpecialityRosterViewModel(
     val failureFlow
         get() = failureChannel.receiveAsFlow()
 
-//    fun getFromRemoteAndSaveToDb() {
-//        viewModelScope.launch {
-//            val specialityList = loadForCheck()
-////            if (specialityList.isNotEmpty()) {
-////                clearAll()
-////            }
-//            if (specialityList.isEmpty()) {
-//                getFromRemoteAndSave()
-//            }
-//        }
-//    }
-
     fun load() = loadSpecialityList().asLiveData()
 
     fun delete() {
@@ -47,7 +35,7 @@ class SpecialityRosterViewModel(
     fun reloadFromRemoteFailure() {
         viewModelScope.launch {
             try {
-                reloadFromRemote()
+                reloadFromRemote.invoke()
             }
             catch (failure: Failure) {
                 failureChannel.send(failure)

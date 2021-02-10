@@ -43,8 +43,6 @@ class SpecialityRosterFragment : Fragment() {
             }
         }
 
-//        viewModel.getFromRemoteAndSaveWithFailure()
-
         val adapter =
             SpecialityRosterAdapter(
                 layoutInflater,
@@ -62,8 +60,6 @@ class SpecialityRosterFragment : Fragment() {
                 )
             )
         }
-
-
 
         viewModel.load().observe(viewLifecycleOwner) {
             adapter.submitList(it)
@@ -101,7 +97,6 @@ class SpecialityRosterFragment : Fragment() {
         when (item.itemId) {
             R.id.load -> {
                 viewModel.reloadFromRemoteFailure()
-//                viewModel.getFromRemoteAndSaveToDb()
                 viewModel.load()
                 return true
             }

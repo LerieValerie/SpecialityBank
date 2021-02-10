@@ -9,17 +9,16 @@ import com.valerie.specialitybank.data.local.model.WorkerModel
 
 data class WorkerSpecialityStore(
     @Embedded
-        val worker: WorkerModel,
+    val worker: WorkerModel,
     @Relation(
-                parentColumn = "workerId",
-//                entity = SpecialityModel::class,
-                entityColumn = "specialityId",
-                associateBy = Junction(
-                    SpecialityWorkerJoin::class,
+        parentColumn = "workerId",
+        entityColumn = "specialityId",
+        associateBy = Junction(
+            SpecialityWorkerJoin::class,
             parentColumn = "workerId",
             entityColumn = "specialityId"
-                )
         )
+    )
 
-        val specialityList: List<SpecialityModel>
+    val specialityList: List<SpecialityModel>
 )

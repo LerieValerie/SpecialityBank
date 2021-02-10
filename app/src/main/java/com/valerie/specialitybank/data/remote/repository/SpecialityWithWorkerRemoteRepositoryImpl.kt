@@ -16,11 +16,10 @@ class SpecialityWithWorkerRemoteRepositoryImpl(
             val response = api.getWorker()
             val specialityList = response.toSpecialityList()
             val workerList = response.toWorkerList()
-            println()
             return Pair(specialityList, workerList)
         }
         catch (throwable: Throwable) {
-            throwable.printStackTrace()
+//            throwable.printStackTrace()
             throw Failure("Retrofit failure")
         }
     }

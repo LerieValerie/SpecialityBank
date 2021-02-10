@@ -9,6 +9,7 @@ class LoadWorkerListBySpecialityIdUseCase(
         private val dispatcher: CoroutineDispatcher
 ) {
     operator fun invoke(specialityId : Int) =
+//        specialityRepository.loadWorkerListBySpecialityId(specialityId)
         specialityRepository.loadWorkerListBySpecialityId(specialityId).flowOn(dispatcher)
 
 }

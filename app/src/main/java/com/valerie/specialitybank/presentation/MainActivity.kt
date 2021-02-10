@@ -30,10 +30,4 @@ class MainActivity : AppCompatActivity() {
 
     override fun onSupportNavigateUp() =
             NavigationUI.navigateUp(findNavController(R.id.nav_host), appBarConfiguration)
-
-//    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-//        menuInflater.inflate(R.menu.actions, menu)
-//
-//        return super.onCreateOptionsMenu(menu)
-//    }
 }

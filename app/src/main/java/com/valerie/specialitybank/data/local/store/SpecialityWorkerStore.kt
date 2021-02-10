@@ -12,7 +12,6 @@ data class SpecialityWorkerStore(
     val speciality : SpecialityModel,
     @Relation(
         parentColumn = "specialityId",
-//        entity = WorkerModel::class,
         entityColumn = "workerId",
         associateBy = Junction(
             SpecialityWorkerJoin::class,

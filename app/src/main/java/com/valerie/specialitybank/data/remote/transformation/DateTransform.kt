@@ -11,16 +11,16 @@ class DateTransform {
 
     companion object {
         private val formatter = DateTimeFormatter.ofPattern(
-                "[yyyy-MM-dd]" +
-                        "[dd-MM-yyyy]"
+            "[yyyy-MM-dd]" +
+                    "[dd-MM-yyyy]"
         )
 
-        fun toKotlinInstant(str : String?) =
-                if (!str.isNullOrEmpty()) {
-                    val localDate = LocalDate.parse(str, formatter).toKotlinLocalDate()
-                    localDate.atStartOfDayIn(TimeZone.currentSystemDefault())
-                } else {
-                    null
-                }
+        fun toKotlinInstant(str: String?) =
+            if (!str.isNullOrEmpty()) {
+                val localDate = LocalDate.parse(str, formatter).toKotlinLocalDate()
+                localDate.atStartOfDayIn(TimeZone.currentSystemDefault())
+            } else {
+                null
+            }
     }
 }
