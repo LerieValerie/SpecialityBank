@@ -1,6 +1,9 @@
 package com.valerie.specialitybank
 
 import android.app.Application
+import com.valerie.specialitybank.di.dataModule
+import com.valerie.specialitybank.di.domainModule
+import com.valerie.specialitybank.di.presentationModule
 import com.valerie.specialitybank.domain.usecase.*
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -13,7 +16,7 @@ class SpecialityBankApp : Application() {
         startKoin {
             androidLogger()
             androidContext(this@SpecialityBankApp)
-            modules(generalModule)
+            modules(dataModule, domainModule, presentationModule)
         }
     }
 }
