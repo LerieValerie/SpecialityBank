@@ -25,13 +25,13 @@ https://gist.githubusercontent.com/LerieValerie/c28bb5e9bb29986d7adfdd6ab5548255
 В случае отсутствия даты, показывать прочерк «-«.
 
 ## Используемый инструментарий и технологии
-Clean Architecture
-MVVM
-LiveData
-Retrofit
-Room
-Navigation
-Glide
-Koin
-Coroutines
-Kotlin
+1. Clean Architecture
+2. MVVM
+3. LiveData
+4. Retrofit
+5. Room
+6. Navigation
+7. Glide
+8. Koin
+9. Coroutines
+10. Kotlin
