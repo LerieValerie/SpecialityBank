@@ -8,6 +8,5 @@ class LoadSpecialityListUseCase(
         private val specialityRepository: SpecialityRepository,
         private val dispatcher: CoroutineDispatcher
 ) {
-//    operator fun invoke() = specialityRepository.loadSpecialityList()
     operator fun invoke() = specialityRepository.loadSpecialityList().flowOn(dispatcher)
 }

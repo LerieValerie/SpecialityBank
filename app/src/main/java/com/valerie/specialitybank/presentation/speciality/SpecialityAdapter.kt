@@ -4,9 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
-import com.valerie.specialitybank.databinding.SpecialityItemBinding
 import com.valerie.specialitybank.databinding.WorkerItemBinding
-import com.valerie.specialitybank.domain.entity.Speciality
 import com.valerie.specialitybank.domain.entity.Worker
 
 class SpecialityAdapter(

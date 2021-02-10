@@ -10,7 +10,6 @@ class LoadWorkerByIdUseCase(
 
 ) {
     operator fun invoke(workerId : Int) =
-//        workerRepository.loadWorkerById(workerId)
         workerRepository.loadWorkerById(workerId).flowOn(dispatcher)
 
 }

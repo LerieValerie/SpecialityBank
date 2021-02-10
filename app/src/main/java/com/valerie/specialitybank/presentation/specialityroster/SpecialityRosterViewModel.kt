@@ -2,12 +2,8 @@ package com.valerie.specialitybank.presentation.specialityroster
 
 import androidx.lifecycle.*
 import com.valerie.specialitybank.domain.entity.Failure
-import com.valerie.specialitybank.domain.entity.Speciality
-import com.valerie.specialitybank.domain.entity.Worker
 import com.valerie.specialitybank.domain.usecase.*
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 

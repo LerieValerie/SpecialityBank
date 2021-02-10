@@ -5,7 +5,6 @@ import com.valerie.specialitybank.domain.entity.Failure
 import com.valerie.specialitybank.domain.entity.Speciality
 import com.valerie.specialitybank.domain.entity.Worker
 import com.valerie.specialitybank.domain.repository.SpecialityWithWorkerRemoteRepository
-import java.io.IOException
 
 class SpecialityWithWorkerRemoteRepositoryImpl(
     private val api : NetInterface
@@ -19,7 +18,6 @@ class SpecialityWithWorkerRemoteRepositoryImpl(
             return Pair(specialityList, workerList)
         }
         catch (throwable: Throwable) {
-//            throwable.printStackTrace()
             throw Failure("Retrofit failure")
         }
     }

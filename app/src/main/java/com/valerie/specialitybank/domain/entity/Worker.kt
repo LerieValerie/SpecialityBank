@@ -1,9 +1,6 @@
 package com.valerie.specialitybank.domain.entity
 
 import kotlinx.datetime.*
-import java.text.ParseException
-import java.text.SimpleDateFormat
-
 
 data class Worker(
         val id: Int,

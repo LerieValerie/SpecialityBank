@@ -3,7 +3,6 @@ package com.valerie.specialitybank.data.remote.transformation
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.atStartOfDayIn
 import kotlinx.datetime.toKotlinLocalDate
-import java.lang.NullPointerException
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 

@@ -17,7 +17,6 @@ import com.valerie.specialitybank.presentation.transformation.NameTransform
 import com.valerie.specialitybank.presentation.transformation.SpecialityListTransform
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
-import java.util.*
 
 class WorkerFragment : Fragment() {
     private val args: WorkerFragmentArgs by navArgs()

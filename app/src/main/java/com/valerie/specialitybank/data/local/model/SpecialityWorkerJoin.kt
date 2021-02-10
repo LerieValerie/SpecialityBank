@@ -4,8 +4,6 @@ import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.ForeignKey.CASCADE
 import androidx.room.Index
-import com.valerie.specialitybank.data.local.model.SpecialityModel
-import com.valerie.specialitybank.data.local.model.WorkerModel
 
 @Entity(
         tableName = "speciality_worker_join",

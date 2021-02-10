@@ -6,7 +6,6 @@ import com.valerie.specialitybank.data.local.converter.toSpecialityModelList
 import com.valerie.specialitybank.domain.entity.Speciality
 import com.valerie.specialitybank.domain.entity.Worker
 import com.valerie.specialitybank.domain.repository.SpecialityRepository
-import com.valerie.specialitybank.domain.repository.WorkerRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
