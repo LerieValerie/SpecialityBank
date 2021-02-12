@@ -15,7 +15,8 @@ class SpecialityHolder(
         binding.apply {
             root.setOnClickListener { onRowClick(worker) }
             workerName.text = getNameSurname(worker)
-            workerAge.text = worker.getAge()?.let {  root.context.getString(R.string.years_old, it) } ?: root.context.getString(R.string.empty)
+            workerAge.text = worker.getAge()?.let { root.context.getString(R.string.years_old, it) }
+                ?: root.context.getString(R.string.empty)
         }
     }
 }

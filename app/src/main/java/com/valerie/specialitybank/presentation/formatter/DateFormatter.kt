@@ -9,8 +9,9 @@ import java.time.format.DateTimeFormatter
 class DateFormatter {
     companion object {
         fun getDateWithDot(dateInstant: Instant?): String? {
-            val formatter= DateTimeFormatter.ofPattern("dd.MM.yyyy")
-            return dateInstant?.toLocalDateTime(TimeZone.currentSystemDefault())?.date?.toJavaLocalDate()?.format(formatter)
+            val formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy")
+            return dateInstant?.toLocalDateTime(TimeZone.currentSystemDefault())?.date?.toJavaLocalDate()
+                ?.format(formatter)
         }
     }
 }

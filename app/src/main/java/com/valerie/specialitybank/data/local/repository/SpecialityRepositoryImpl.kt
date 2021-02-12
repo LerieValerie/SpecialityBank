@@ -9,7 +9,8 @@ import com.valerie.specialitybank.domain.repository.SpecialityRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-class SpecialityRepositoryImpl(private val dbInstance : SpecialityWorkerDatabase) : SpecialityRepository {
+class SpecialityRepositoryImpl(private val dbInstance: SpecialityWorkerDatabase) :
+    SpecialityRepository {
 
     override fun loadSpecialityList(): Flow<List<Speciality>> =
         dbInstance.specialityDao().loadSpeciality().map { it ->

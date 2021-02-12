@@ -5,10 +5,10 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.flowOn
 
 class LoadSpecialityListByWorkerIdUseCase(
-        private val workerRepository: WorkerRepository,
-        private val dispatcher: CoroutineDispatcher
+    private val workerRepository: WorkerRepository,
+    private val dispatcher: CoroutineDispatcher
 ) {
-    operator fun invoke(workerId : Int) =
+    operator fun invoke(workerId: Int) =
         workerRepository.loadSpecialityListByWorkerId(workerId).flowOn(dispatcher)
 
 }

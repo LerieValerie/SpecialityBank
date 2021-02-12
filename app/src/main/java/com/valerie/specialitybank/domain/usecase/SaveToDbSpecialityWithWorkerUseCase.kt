@@ -14,7 +14,7 @@ class SaveToDbSpecialityWithWorkerUseCase(
     private val joinRepository: JoinRepository,
     private val dispatcher: CoroutineDispatcher
 ) {
-    suspend operator fun invoke(specialityList : List<Speciality>, workerList : List<Worker>){
+    suspend operator fun invoke(specialityList: List<Speciality>, workerList: List<Worker>) {
         withContext(dispatcher) {
             specialityRepository.saveSpecialityList(specialityList)
             workerRepository.saveWorkerList(workerList)

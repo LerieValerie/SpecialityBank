@@ -10,7 +10,7 @@ interface WorkerDao {
 
     @Transaction
     @Query("SELECT * FROM worker WHERE workerId = :workerId")
-    fun loadWorkerById(workerId : Int): Flow<WorkerModel?>
+    fun loadWorkerById(workerId: Int): Flow<WorkerModel?>
 
     @Transaction
     @Query("SELECT * FROM worker WHERE workerId = :workerId")
@@ -20,5 +20,5 @@ interface WorkerDao {
     suspend fun deleteAllWorker()
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun saveWorker(workerList : List<WorkerModel>)
+    suspend fun saveWorker(workerList: List<WorkerModel>)
 }

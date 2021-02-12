@@ -25,11 +25,11 @@ class WorkerFragment : Fragment() {
     private lateinit var worker: Worker
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View = FragmentWorkerBinding.inflate(inflater, container, false)
-            .apply { binding = this }.root
+        .apply { binding = this }.root
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -49,12 +49,12 @@ class WorkerFragment : Fragment() {
     private fun displayPhoto(url: String?) {
         binding.apply {
             Glide.with(root.context)
-                    .load(url)
-                    .transform(CircleCrop())
-                    .placeholder(R.drawable.ic_image_place_holder)
-                    .error(R.drawable.ic_broken_image)
-                    .fallback(R.drawable.ic_no_image)
-                    .into(workerImage)
+                .load(url)
+                .transform(CircleCrop())
+                .placeholder(R.drawable.ic_image_place_holder)
+                .error(R.drawable.ic_broken_image)
+                .fallback(R.drawable.ic_no_image)
+                .into(workerImage)
         }
     }
 
@@ -62,12 +62,13 @@ class WorkerFragment : Fragment() {
         displayPhoto(worker.imageUrl)
         binding.apply {
             workerSurnameName.text = NameFormatter.getNameSurname(worker)
-            birthDate.text = DateFormatter.getDateWithDot(worker.birthDate) ?: getString(R.string.empty)
+            birthDate.text =
+                DateFormatter.getDateWithDot(worker.birthDate) ?: getString(R.string.empty)
             age.text = worker.getAge()?.toString() ?: getString(R.string.empty)
         }
     }
 
-    private fun displaySpecialityList(specialityList : List<Speciality>) {
+    private fun displaySpecialityList(specialityList: List<Speciality>) {
         binding.specialityList.text = SpecialityListFormatter.getListToStr(specialityList)
     }
 }

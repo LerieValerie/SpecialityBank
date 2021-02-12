@@ -9,7 +9,7 @@ import com.valerie.specialitybank.data.local.model.WorkerModel
 
 data class SpecialityWorkerStore(
     @Embedded
-    val speciality : SpecialityModel,
+    val speciality: SpecialityModel,
     @Relation(
         parentColumn = "specialityId",
         entityColumn = "workerId",

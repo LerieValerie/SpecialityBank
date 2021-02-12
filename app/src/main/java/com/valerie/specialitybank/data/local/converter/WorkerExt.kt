@@ -15,8 +15,8 @@ fun Worker.toModel() = WorkerModel(
 
 fun List<Worker>.toWorkerModelList() = map { it.toModel() }
 
-fun Worker.getSpecialityList(specialityFullList : List<Speciality>) =
-        specialityFullList.filter { specialityIdList.contains(it.id) }
+fun Worker.getSpecialityList(specialityFullList: List<Speciality>) =
+    specialityFullList.filter { specialityIdList.contains(it.id) }
 
 fun WorkerModel.toEntity() = Worker(
         id = workerId,
@@ -30,5 +30,5 @@ fun WorkerModel.toEntity() = Worker(
 private fun Instant.toLong(): Long = this.toEpochMilliseconds()
 
 private fun Long.toInstant() = this.let {
-       Instant.fromEpochMilliseconds(it)
+    Instant.fromEpochMilliseconds(it)
 }

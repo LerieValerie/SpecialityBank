@@ -1,7 +1,7 @@
 package com.valerie.specialitybank.di
 
 import com.valerie.specialitybank.domain.usecase.*
-import kotlinx.coroutines.*
+import kotlinx.coroutines.Dispatchers
 import org.koin.dsl.module
 
 val domainModule = module {

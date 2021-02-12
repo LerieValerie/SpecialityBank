@@ -5,11 +5,11 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.flowOn
 
 class LoadSpecialityByIdUseCase(
-        private val specialityRepository: SpecialityRepository,
-        private val dispatcher: CoroutineDispatcher
+    private val specialityRepository: SpecialityRepository,
+    private val dispatcher: CoroutineDispatcher
 
 ) {
-    operator fun invoke(specialityId : Int) =
+    operator fun invoke(specialityId: Int) =
         specialityRepository.loadSpecialityById(specialityId).flowOn(dispatcher)
 
 }

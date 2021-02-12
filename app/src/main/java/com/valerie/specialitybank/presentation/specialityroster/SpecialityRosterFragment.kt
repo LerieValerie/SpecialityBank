@@ -79,7 +79,7 @@ class SpecialityRosterFragment : Fragment() {
         viewModel.getFromRemoteAndSaveWithFailure()
     }
 
-    private fun display(speciality : Speciality) {
+    private fun display(speciality: Speciality) {
         findNavController()
             .navigate(
                 SpecialityRosterFragmentDirections.actionSpeciality(

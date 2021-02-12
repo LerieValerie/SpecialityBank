@@ -5,12 +5,12 @@ import com.valerie.specialitybank.domain.entity.Worker
 import kotlinx.coroutines.flow.Flow
 
 interface SpecialityRepository {
-    fun loadSpecialityList() : Flow<List<Speciality>>
-    fun loadSpecialityById(specialityId : Int) : Flow<Speciality?>
-    fun loadWorkerListBySpecialityId(specialityId : Int) : Flow<List<Worker>>
+    fun loadSpecialityList(): Flow<List<Speciality>>
+    fun loadSpecialityById(specialityId: Int): Flow<Speciality?>
+    fun loadWorkerListBySpecialityId(specialityId: Int): Flow<List<Worker>>
 
     suspend fun deleteSpeciality()
 
-    suspend fun saveSpecialityList(specialityList : List<Speciality>)
+    suspend fun saveSpecialityList(specialityList: List<Speciality>)
 
 }

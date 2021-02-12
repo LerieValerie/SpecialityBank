@@ -6,9 +6,9 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 
 class ClearAllUseCase(
-        private val workerRepository: WorkerRepository,
-        private val specialityRepository: SpecialityRepository,
-        private val dispatcher: CoroutineDispatcher
+    private val workerRepository: WorkerRepository,
+    private val specialityRepository: SpecialityRepository,
+    private val dispatcher: CoroutineDispatcher
 ) {
     suspend operator fun invoke() {
         withContext(dispatcher) {
