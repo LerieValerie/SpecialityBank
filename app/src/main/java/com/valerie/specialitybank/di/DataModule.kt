@@ -20,8 +20,8 @@ val dataModule = module {
     single { SpecialityWorkerDatabase.newInstance(androidContext()) }
     single { RetrofitBuilder.buildApi(get(named(apiUrl)))}
 
-    factory { SpecialityWithWorkerRemoteRepositoryImpl(get()) } bind SpecialityWithWorkerRemoteRepository::class
-    factory { SpecialityRepositoryImpl(get()) } bind SpecialityRepository::class
-    factory { WorkerRepositoryImpl(get()) } bind WorkerRepository::class
-    factory { JoinRepositoryImpl(get()) } bind JoinRepository::class
+    single { SpecialityWithWorkerRemoteRepositoryImpl(get()) } bind SpecialityWithWorkerRemoteRepository::class
+    single { SpecialityRepositoryImpl(get()) } bind SpecialityRepository::class
+    single { WorkerRepositoryImpl(get()) } bind WorkerRepository::class
+    single { JoinRepositoryImpl(get()) } bind JoinRepository::class
 }

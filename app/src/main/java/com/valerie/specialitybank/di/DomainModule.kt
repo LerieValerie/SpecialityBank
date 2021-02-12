@@ -7,15 +7,15 @@ import org.koin.dsl.module
 val domainModule = module {
     single { Dispatchers.Default }
 
-    factory { SaveToDbSpecialityWithWorkerUseCase(get(), get(), get(), get()) }
-    factory { GetByUrlSpecialityWithWorkerUseCase(get(), get()) }
-    factory { SaveToDbFromRemoteSpecialityWithWorkerUseCase(get(), get()) }
-    factory { LoadSpecialityListUseCase(get(), get()) }
-    factory { LoadSpecialityListForCheckUseCase(get(), get()) }
-    factory { ClearAllUseCase(get(), get(), get()) }
-    factory { LoadSpecialityByIdUseCase(get(), get()) }
-    factory { LoadWorkerListBySpecialityIdUseCase(get(), get()) }
-    factory { LoadWorkerByIdUseCase(get(), get()) }
-    factory { LoadSpecialityListByWorkerIdUseCase(get(), get()) }
-    factory { ReloadFromRemoteUseCase(get(), get()) }
+    single { SaveToDbSpecialityWithWorkerUseCase(get(), get(), get(), get()) }
+    single { GetByUrlSpecialityWithWorkerUseCase(get(), get()) }
+    single { SaveToDbFromRemoteSpecialityWithWorkerUseCase(get(), get()) }
+    single { LoadSpecialityListUseCase(get(), get()) }
+    single { LoadSpecialityListForCheckUseCase(get(), get()) }
+    single { ClearAllUseCase(get(), get(), get()) }
+    single { LoadSpecialityByIdUseCase(get(), get()) }
+    single { LoadWorkerListBySpecialityIdUseCase(get(), get()) }
+    single { LoadWorkerByIdUseCase(get(), get()) }
+    single { LoadSpecialityListByWorkerIdUseCase(get(), get()) }
+    single { ReloadFromRemoteUseCase(get(), get()) }
 }
