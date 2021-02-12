@@ -27,8 +27,8 @@ fun WorkerModel.toEntity() = Worker(
         specialityIdList = listOf()
 )
 
-fun Instant.toLong(): Long = this.toEpochMilliseconds()
+private fun Instant.toLong(): Long = this.toEpochMilliseconds()
 
-fun Long.toInstant() = this.let {
+private fun Long.toInstant() = this.let {
        Instant.fromEpochMilliseconds(it)
 }

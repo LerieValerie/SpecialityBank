@@ -18,11 +18,6 @@ class SpecialityRepositoryImpl(private val dbInstance : SpecialityWorkerDatabase
             }
         }
 
-    override suspend fun loadSpecialityListForCheck(): List<Speciality> =
-        dbInstance.specialityDao().loadSpecialityListForCheck().map { specialityModel ->
-            specialityModel.toEntity()
-        }
-
     override fun loadSpecialityById(specialityId: Int): Flow<Speciality?> =
         dbInstance.specialityDao().loadSpecialityById(specialityId).map { it?.toEntity() }
 
