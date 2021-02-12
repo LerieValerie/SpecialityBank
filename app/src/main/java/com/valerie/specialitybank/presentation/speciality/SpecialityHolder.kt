@@ -4,7 +4,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.valerie.specialitybank.R
 import com.valerie.specialitybank.databinding.WorkerItemBinding
 import com.valerie.specialitybank.domain.entity.Worker
-import com.valerie.specialitybank.presentation.transformation.NameTransform.Companion.getNameSurname
+import com.valerie.specialitybank.presentation.formatter.NameFormatter.Companion.getNameSurname
 
 class SpecialityHolder(
     private val binding: WorkerItemBinding,

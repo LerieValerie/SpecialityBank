@@ -12,5 +12,3 @@ fun SpecialityModel.toEntity() = Speciality(
         id = specialityId,
         name = name
 )
-
-fun List<Speciality>.toSpecialityModelList() = map { it.toModel() }

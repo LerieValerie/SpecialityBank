@@ -1,4 +1,4 @@
-package com.valerie.specialitybank.data.remote.transformation
+package com.valerie.specialitybank.data.remote.formatter
 
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.atStartOfDayIn
@@ -6,7 +6,7 @@ import kotlinx.datetime.toKotlinLocalDate
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
-class DateTransform {
+class DateFormatter {
 
     companion object {
         private val formatter = DateTimeFormatter.ofPattern(

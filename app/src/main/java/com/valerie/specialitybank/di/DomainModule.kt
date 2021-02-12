@@ -11,7 +11,6 @@ val domainModule = module {
     single { GetByUrlSpecialityWithWorkerUseCase(get(), get()) }
     single { SaveToDbFromRemoteSpecialityWithWorkerUseCase(get(), get()) }
     single { LoadSpecialityListUseCase(get(), get()) }
-    single { LoadSpecialityListForCheckUseCase(get(), get()) }
     single { ClearAllUseCase(get(), get(), get()) }
     single { LoadSpecialityByIdUseCase(get(), get()) }
     single { LoadWorkerListBySpecialityIdUseCase(get(), get()) }

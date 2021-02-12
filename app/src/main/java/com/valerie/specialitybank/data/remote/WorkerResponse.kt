@@ -1,8 +1,8 @@
 package com.valerie.specialitybank.data.remote
 
 import com.google.gson.annotations.SerializedName
-import com.valerie.specialitybank.data.remote.transformation.DateTransform.Companion.toKotlinInstant
-import com.valerie.specialitybank.data.remote.transformation.NameTransform.Companion.toUpStart
+import com.valerie.specialitybank.data.remote.formatter.DateFormatter.Companion.toKotlinInstant
+import com.valerie.specialitybank.data.remote.formatter.NameFormatter.Companion.toUpStart
 import com.valerie.specialitybank.domain.entity.Worker
 
 data class WorkerResponse(

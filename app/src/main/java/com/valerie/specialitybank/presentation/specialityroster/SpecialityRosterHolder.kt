@@ -12,7 +12,6 @@ class SpecialityRosterHolder(
     fun bind(speciality: Speciality) {
         binding.apply {
             root.setOnClickListener { onRowClick(speciality) }
-            specialityCode.text = speciality.id.toString()
             specialityItem.text = speciality.name
         }
     }

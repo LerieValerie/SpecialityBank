@@ -10,7 +10,6 @@ class LoadSpecialityByIdUseCase(
 
 ) {
     operator fun invoke(specialityId : Int) =
-//        specialityRepository.loadSpecialityById(specialityId)
         specialityRepository.loadSpecialityById(specialityId).flowOn(dispatcher)
 
 }

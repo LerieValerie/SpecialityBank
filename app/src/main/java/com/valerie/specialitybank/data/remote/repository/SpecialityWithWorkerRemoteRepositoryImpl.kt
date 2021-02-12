@@ -1,5 +1,6 @@
 package com.valerie.specialitybank.data.remote.repository
 
+import com.valerie.specialitybank.R
 import com.valerie.specialitybank.data.remote.NetInterface
 import com.valerie.specialitybank.domain.entity.Failure
 import com.valerie.specialitybank.domain.entity.Speciality
@@ -18,7 +19,7 @@ class SpecialityWithWorkerRemoteRepositoryImpl(
             return Pair(specialityList, workerList)
         }
         catch (throwable: Throwable) {
-            throw Failure("Retrofit failure")
+            throw Failure()
         }
     }
 }

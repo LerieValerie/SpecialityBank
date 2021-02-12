@@ -1,8 +1,8 @@
-package com.valerie.specialitybank.presentation.transformation
+package com.valerie.specialitybank.presentation.formatter
 
 import com.valerie.specialitybank.domain.entity.Worker
 
-class NameTransform {
+class NameFormatter {
     companion object {
         fun getNameSurname(worker: Worker) = "${worker.surname} ${worker.name}"
     }

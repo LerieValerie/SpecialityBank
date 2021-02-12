@@ -7,7 +7,7 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val presentationModule = module {
-    viewModel { SpecialityRosterViewModel(get(), get(), get(), get(), get()) }
+    viewModel { SpecialityRosterViewModel(get(), get(), get(), get()) }
     viewModel { (specialityId: Int) -> SpecialityViewModel(specialityId, get(), get()) }
     viewModel { (workerId: Int) -> WorkerViewModel(workerId, get(), get()) }
 }

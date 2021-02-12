@@ -10,7 +10,6 @@ import kotlinx.coroutines.launch
 class SpecialityRosterViewModel(
         private val getFromRemoteAndSave : SaveToDbFromRemoteSpecialityWithWorkerUseCase,
         private val loadSpecialityList : LoadSpecialityListUseCase,
-        private val loadForCheck : LoadSpecialityListForCheckUseCase,
         private val clearAll : ClearAllUseCase,
         private val reloadFromRemote: ReloadFromRemoteUseCase
 ) : ViewModel() {

@@ -12,9 +12,9 @@ import com.valerie.specialitybank.R
 import com.valerie.specialitybank.databinding.FragmentWorkerBinding
 import com.valerie.specialitybank.domain.entity.Speciality
 import com.valerie.specialitybank.domain.entity.Worker
-import com.valerie.specialitybank.presentation.transformation.DateTransform
-import com.valerie.specialitybank.presentation.transformation.NameTransform
-import com.valerie.specialitybank.presentation.transformation.SpecialityListTransform
+import com.valerie.specialitybank.presentation.formatter.DateFormatter
+import com.valerie.specialitybank.presentation.formatter.NameFormatter
+import com.valerie.specialitybank.presentation.formatter.SpecialityListFormatter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
@@ -28,7 +28,7 @@ class WorkerFragment : Fragment() {
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
-    ): View? = FragmentWorkerBinding.inflate(inflater, container, false)
+    ): View = FragmentWorkerBinding.inflate(inflater, container, false)
             .apply { binding = this }.root
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -61,13 +61,13 @@ class WorkerFragment : Fragment() {
     private fun displayWorkerInfo(worker: Worker) {
         displayPhoto(worker.imageUrl)
         binding.apply {
-            workerSurnameName.text = NameTransform.getNameSurname(worker)
-            birthDate.text = DateTransform.getDateWithDot(worker.birthDate) ?: getString(R.string.empty)
+            workerSurnameName.text = NameFormatter.getNameSurname(worker)
+            birthDate.text = DateFormatter.getDateWithDot(worker.birthDate) ?: getString(R.string.empty)
             age.text = worker.getAge()?.toString() ?: getString(R.string.empty)
         }
     }
 
     private fun displaySpecialityList(specialityList : List<Speciality>) {
-        binding.specialityList.text = SpecialityListTransform.getListToStr(specialityList)
+        binding.specialityList.text = SpecialityListFormatter.getListToStr(specialityList)
     }
 }

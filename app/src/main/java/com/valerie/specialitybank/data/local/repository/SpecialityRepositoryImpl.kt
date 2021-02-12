@@ -2,7 +2,7 @@ package com.valerie.specialitybank.data.local.repository
 
 import com.valerie.specialitybank.data.local.SpecialityWorkerDatabase
 import com.valerie.specialitybank.data.local.converter.toEntity
-import com.valerie.specialitybank.data.local.converter.toSpecialityModelList
+import com.valerie.specialitybank.data.local.converter.toModel
 import com.valerie.specialitybank.domain.entity.Speciality
 import com.valerie.specialitybank.domain.entity.Worker
 import com.valerie.specialitybank.domain.repository.SpecialityRepository
@@ -38,7 +38,7 @@ class SpecialityRepositoryImpl(private val dbInstance : SpecialityWorkerDatabase
     }
 
     override suspend fun saveSpecialityList(specialityList: List<Speciality>) {
-        val specialityModelList = specialityList.toSpecialityModelList()
+        val specialityModelList = specialityList.map { it.toModel() }
 
         dbInstance.specialityDao().saveSpeciality(specialityModelList)
     }

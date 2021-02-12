@@ -6,10 +6,10 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 
 class LoadSpecialityListForCheckUseCase(
-        private val specialityRepository: SpecialityRepository,
-        private val dispatcher: CoroutineDispatcher
+    private val specialityRepository: SpecialityRepository,
+    private val dispatcher: CoroutineDispatcher
 ) {
-    suspend operator fun invoke() : List<Speciality> =
+    suspend operator fun invoke(): List<Speciality> =
         withContext(dispatcher) {
             specialityRepository.loadSpecialityListForCheck()
         }

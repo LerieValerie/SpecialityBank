@@ -33,9 +33,9 @@ class SpecialityRosterFragment : Fragment() {
 
         viewModel.failureFlow.asLiveData().observe(viewLifecycleOwner) {
             when {
-                !it.message.isNullOrEmpty() -> {
+                it != null -> {
                     binding.empty.visibility = View.VISIBLE
-                    binding.empty.text = it.message
+                    binding.empty.text = getString(R.string.failure_retrofit_text)
                 }
                 else -> {
                     binding.empty.visibility = View.GONE
@@ -67,7 +67,7 @@ class SpecialityRosterFragment : Fragment() {
             when {
                 it.isEmpty() -> {
                     binding.empty.visibility = View.VISIBLE
-                    binding.empty.setText(R.string.emptyText)
+                    binding.empty.setText(R.string.empty_text)
                 }
                 else -> {
                     binding.empty.visibility = View.GONE
