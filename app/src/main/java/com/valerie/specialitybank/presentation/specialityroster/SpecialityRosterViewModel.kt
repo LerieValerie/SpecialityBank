@@ -8,7 +8,9 @@ import com.valerie.specialitybank.domain.usecase.ClearAllUseCase
 import com.valerie.specialitybank.domain.usecase.LoadSpecialityListUseCase
 import com.valerie.specialitybank.domain.usecase.ReloadFromRemoteUseCase
 import com.valerie.specialitybank.domain.usecase.SaveToDbFromRemoteSpecialityWithWorkerUseCase
+import com.valerie.specialitybank.presentation.view.toView
 import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 
@@ -24,7 +26,11 @@ class SpecialityRosterViewModel(
     val failureFlow
         get() = failureChannel.receiveAsFlow()
 
-    fun load() = loadSpecialityList().asLiveData()
+    fun load() = loadSpecialityList().map {
+        it.map {
+            speciality -> speciality.toView()
+        }
+    }.asLiveData()
 
     fun delete() {
         viewModelScope.launch {

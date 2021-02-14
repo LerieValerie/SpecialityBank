@@ -6,11 +6,12 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.valerie.specialitybank.databinding.WorkerItemBinding
 import com.valerie.specialitybank.domain.entity.Worker
+import com.valerie.specialitybank.presentation.view.WorkerView
 
 class SpecialityAdapter(
     private val inflater: LayoutInflater,
-    private val onRowClick: (Worker) -> Unit
-) : ListAdapter<Worker, SpecialityHolder>(
+    private val onRowClick: (WorkerView) -> Unit
+) : ListAdapter<WorkerView, SpecialityHolder>(
     DiffCallback
 ) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
@@ -24,10 +25,11 @@ class SpecialityAdapter(
     }
 }
 
-private object DiffCallback : DiffUtil.ItemCallback<Worker>() {
-    override fun areItemsTheSame(oldItem: Worker, newItem: Worker) =
+private object DiffCallback : DiffUtil.ItemCallback<WorkerView>() {
+    override fun areItemsTheSame(oldItem: WorkerView, newItem: WorkerView) =
         oldItem.id == newItem.id
 
-    override fun areContentsTheSame(oldItem: Worker, newItem: Worker) =
-        oldItem.name == newItem.name
+    override fun areContentsTheSame(oldItem: WorkerView, newItem: WorkerView) =
+        oldItem.fullName == newItem.fullName &&
+                oldItem.age == newItem.age
 }

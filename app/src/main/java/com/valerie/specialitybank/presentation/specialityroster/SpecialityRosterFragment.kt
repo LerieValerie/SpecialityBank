@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.valerie.specialitybank.R
 import com.valerie.specialitybank.databinding.FragmentSpecialityRosterBinding
 import com.valerie.specialitybank.domain.entity.Speciality
+import com.valerie.specialitybank.presentation.view.SpecialityView
+import com.valerie.specialitybank.presentation.view.toView
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SpecialityRosterFragment : Fragment() {
@@ -79,7 +81,7 @@ class SpecialityRosterFragment : Fragment() {
         viewModel.getFromRemoteAndSaveWithFailure()
     }
 
-    private fun display(speciality: Speciality) {
+    private fun display(speciality: SpecialityView) {
         findNavController()
             .navigate(
                 SpecialityRosterFragmentDirections.actionSpeciality(

@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.valerie.specialitybank.databinding.FragmentSpecialityBinding
 import com.valerie.specialitybank.domain.entity.Worker
+import com.valerie.specialitybank.presentation.view.WorkerView
+import com.valerie.specialitybank.presentation.view.toView
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
@@ -58,7 +60,7 @@ class SpecialityFragment : Fragment() {
         }
     }
 
-    private fun display(worker: Worker) {
+    private fun display(worker: WorkerView) {
         findNavController()
             .navigate(
                 SpecialityFragmentDirections.actionWorker(

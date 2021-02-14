@@ -15,6 +15,9 @@ import com.valerie.specialitybank.domain.entity.Worker
 import com.valerie.specialitybank.presentation.formatter.DateFormatter
 import com.valerie.specialitybank.presentation.formatter.NameFormatter
 import com.valerie.specialitybank.presentation.formatter.SpecialityListFormatter
+import com.valerie.specialitybank.presentation.view.SpecialityView
+import com.valerie.specialitybank.presentation.view.WorkerView
+import com.valerie.specialitybank.presentation.view.toView
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
@@ -22,7 +25,7 @@ class WorkerFragment : Fragment() {
     private val args: WorkerFragmentArgs by navArgs()
     private val viewModel: WorkerViewModel by viewModel { parametersOf(args.workerId) }
     private lateinit var binding: FragmentWorkerBinding
-    private lateinit var worker: Worker
+    private lateinit var worker: WorkerView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -58,17 +61,16 @@ class WorkerFragment : Fragment() {
         }
     }
 
-    private fun displayWorkerInfo(worker: Worker) {
+    private fun displayWorkerInfo(worker: WorkerView) {
         displayPhoto(worker.imageUrl)
         binding.apply {
-            workerSurnameName.text = NameFormatter.getNameSurname(worker)
-            birthDate.text =
-                DateFormatter.getDateWithDot(worker.birthDate) ?: getString(R.string.empty)
-            age.text = worker.getAge()?.toString() ?: getString(R.string.empty)
+            workerSurnameName.text = worker.fullName
+            birthDate.text = worker.birthDate ?: getString(R.string.empty)
+            age.text = worker.age?.toString() ?: getString(R.string.empty)
         }
     }
 
-    private fun displaySpecialityList(specialityList: List<Speciality>) {
-        binding.specialityList.text = SpecialityListFormatter.getListToStr(specialityList)
+    private fun displaySpecialityList(specialityList: List<SpecialityView>) {
+        binding.specialityList.text = specialityList.map { it.name }.joinToString(getString(R.string.separator))
     }
 }
