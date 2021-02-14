@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.valerie.specialitybank.databinding.SpecialityItemBinding
-import com.valerie.specialitybank.domain.entity.Speciality
 import com.valerie.specialitybank.presentation.view.SpecialityView
 
 class SpecialityRosterAdapter(

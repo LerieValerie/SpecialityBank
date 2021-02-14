@@ -10,14 +10,8 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.valerie.specialitybank.R
 import com.valerie.specialitybank.databinding.FragmentWorkerBinding
-import com.valerie.specialitybank.domain.entity.Speciality
-import com.valerie.specialitybank.domain.entity.Worker
-import com.valerie.specialitybank.presentation.formatter.DateFormatter
-import com.valerie.specialitybank.presentation.formatter.NameFormatter
-import com.valerie.specialitybank.presentation.formatter.SpecialityListFormatter
 import com.valerie.specialitybank.presentation.view.SpecialityView
 import com.valerie.specialitybank.presentation.view.WorkerView
-import com.valerie.specialitybank.presentation.view.toView
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
@@ -71,6 +65,7 @@ class WorkerFragment : Fragment() {
     }
 
     private fun displaySpecialityList(specialityList: List<SpecialityView>) {
-        binding.specialityList.text = specialityList.map { it.name }.joinToString(getString(R.string.separator))
+        binding.specialityList.text =
+            specialityList.map { it.name }.joinToString(getString(R.string.separator))
     }
 }

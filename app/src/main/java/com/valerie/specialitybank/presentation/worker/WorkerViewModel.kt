@@ -16,8 +16,8 @@ class WorkerViewModel(
     fun loadWorker() = loadById(workerId).map { it?.toView() }.asLiveData()
 
     fun loadSpecialityList() = loadSpecialityListById(workerId).map {
-        it.map {
-            speciality -> speciality.toView()
+        it.map { speciality ->
+            speciality.toView()
         }
     }.asLiveData()
 }

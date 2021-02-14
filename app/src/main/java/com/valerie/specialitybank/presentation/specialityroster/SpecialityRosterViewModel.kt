@@ -27,8 +27,8 @@ class SpecialityRosterViewModel(
         get() = failureChannel.receiveAsFlow()
 
     fun load() = loadSpecialityList().map {
-        it.map {
-            speciality -> speciality.toView()
+        it.map { speciality ->
+            speciality.toView()
         }
     }.asLiveData()
 

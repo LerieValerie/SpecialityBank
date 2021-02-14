@@ -3,9 +3,6 @@ package com.valerie.specialitybank.presentation.speciality
 import androidx.recyclerview.widget.RecyclerView
 import com.valerie.specialitybank.R
 import com.valerie.specialitybank.databinding.WorkerItemBinding
-import com.valerie.specialitybank.domain.entity.Worker
-import com.valerie.specialitybank.presentation.formatter.NameFormatter.Companion.getNameSurname
-import com.valerie.specialitybank.presentation.view.SpecialityView
 import com.valerie.specialitybank.presentation.view.WorkerView
 
 class SpecialityHolder(
