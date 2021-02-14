@@ -10,9 +10,15 @@ class SpecialityRosterHolder(
     val onRowClick: (SpecialityView) -> Unit
 ) : RecyclerView.ViewHolder(binding.root) {
 
+    private lateinit var speciality: SpecialityView
+
+    init {
+        binding.root.setOnClickListener { onRowClick(speciality) }
+    }
+
     fun bind(speciality: SpecialityView) {
+        this.speciality = speciality
         binding.apply {
-            root.setOnClickListener { onRowClick(speciality) }
             specialityItem.text = speciality.name
         }
     }

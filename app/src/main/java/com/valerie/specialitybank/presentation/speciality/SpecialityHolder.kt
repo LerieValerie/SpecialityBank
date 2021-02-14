@@ -5,6 +5,7 @@ import com.valerie.specialitybank.R
 import com.valerie.specialitybank.databinding.WorkerItemBinding
 import com.valerie.specialitybank.domain.entity.Worker
 import com.valerie.specialitybank.presentation.formatter.NameFormatter.Companion.getNameSurname
+import com.valerie.specialitybank.presentation.view.SpecialityView
 import com.valerie.specialitybank.presentation.view.WorkerView
 
 class SpecialityHolder(
@@ -12,9 +13,15 @@ class SpecialityHolder(
     val onRowClick: (WorkerView) -> Unit
 ) : RecyclerView.ViewHolder(binding.root) {
 
+    private lateinit var worker: WorkerView
+
+    init {
+        binding.root.setOnClickListener { onRowClick(worker) }
+    }
+
     fun bind(worker: WorkerView) {
+        this.worker = worker
         binding.apply {
-            root.setOnClickListener { onRowClick(worker) }
             workerName.text = worker.fullName
             workerAge.text = worker.age?.let { root.context.getString(R.string.years_old, it) }
                 ?: root.context.getString(R.string.empty)
